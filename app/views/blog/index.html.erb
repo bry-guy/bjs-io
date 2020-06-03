@@ -1,0 +1,3 @@
+<% @blogs.each do |b| %>
+  <div><%= b.date %> <%= link_to b.display_title, controller: "blog", action: "show", title: b.title %></div>
+<% end %>

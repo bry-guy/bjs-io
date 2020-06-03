@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :helloworld, only: [:index]
-  get '/helloworld', to: 'helloworld#index'
+  resources :blog, only: [:index]
+  get 'blog/:title', to: 'blog#show'
 end

@@ -8,6 +8,8 @@ class CreateBlogs < ActiveRecord::Migration[6.0]
       t.text :content
       t.text :content_parsed
 
+      t.index :title, unique: true
+
       t.timestamps
     end
   end
