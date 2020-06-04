@@ -1,4 +1,5 @@
 require 'redcarpet'
+require 'redcarpet/render_strip'
 require 'coderay' 
 
 module MarkdownParser
@@ -22,6 +23,11 @@ module MarkdownParser
     }
     md = Redcarpet::Markdown.new(renderer, options)
     md.render(text)
+  end
+
+  def strip_markdown(text)
+    pt = Redcarpet::Markdown.new(Redcarpet::Render::StripDown)
+    pt.render(text)
   end
 
 end

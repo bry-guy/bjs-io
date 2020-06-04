@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_02_041033) do
+ActiveRecord::Schema.define(version: 2020_06_04_044815) do
 
   create_table "blogs", force: :cascade do |t|
     t.text "title"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_06_02_041033) do
     t.text "content_parsed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "preview"
     t.index ["title"], name: "index_blogs_on_title", unique: true
   end
 
