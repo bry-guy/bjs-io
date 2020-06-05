@@ -1,7 +1,13 @@
 # TODO
 ## Models
-- [] Move to model so posts can magically work with posts/{id}
-- [] Separate finished content (post-render) from raw-text markdown (pre-render) in models/db
+- [x] Move to model so posts can magically work with posts/{id}
+- [x] Separate finished content (post-render) from raw-text markdown (pre-render) in models/db
+- [] Add strip-down preview automatically to seeded content
+
+## UI
+- [] Rather than using erb, pass /blogs content (`@blogs` list) into React component
+- [] React component renders all HTML
+- [] React component is styled by imported .scss file
 
 # Rails / Data Layout
 ## Routing

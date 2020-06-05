@@ -1,6 +1,18 @@
-<% @blogs.each do |b| %>
-  <div class="title"><%= link_to b.display_title, controller: "blog", action: "show", title: b.title %></div>
-  <div class="date"><%= b.display_date %></div>
-  <div class="preview"><%= b.display_preview %></div>
-  <br/>
-<% end %>
+<% # rails-style %>
+
+<%# <% @blogs.each do |b| %1> %>
+  <%# <div class="title"><%= link_to b.display_title, controller: "blog", action: "show", title: b.title %1></div> %>
+  <%# <div class="date"><%= b.display_date %1></div> %>
+  <%# <div class="preview"><%= b.display_preview %1></div> %>
+  <%# <br/> %>
+<%# <% end %1> %>
+
+<% # react-style %>
+
+<%= react_component("blogs.Blogs", { 
+  blogs: @blogs.map { |b| { 
+    title: (link_to b.display_title, controller: "blog", action: "show", title: b.title), 
+    date: b.display_date, 
+    preview: b.display_preview 
+  }} 
+}) %>

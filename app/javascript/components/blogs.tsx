@@ -1,11 +1,26 @@
 import * as React from "react";
+import ReactHtmlParser from "react-html-parser";
+
+interface DisplayBlog {
+	title: string
+	date: Date
+	content: string
+	preview: string
+}
 
 export interface BlogsProps {
-	content: any
+	blogs: DisplayBlog[]
 }
 
 export class Blogs extends React.Component<BlogsProps, {}> {
   render() {
-    return (this.props.content)
+	  const foo = this.props.blogs.map((item: DisplayBlog) => (
+		  <div>
+			  <div className="title" key={item.title}>{ReactHtmlParser(item.title)}</div>
+			  <div className="date" key={`${item.title}_${item.date}`}>{item.date}</div>
+			  <div className="preview" key={`${item.title}_${item.preview}`}>{item.preview}</div>
+		  </div>
+		  ));
+	  return(foo);
   }
 }
