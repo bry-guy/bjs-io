@@ -21,6 +21,6 @@ export class Blogs extends React.Component<BlogsProps, {}> {
 			  <div className="preview" key={`${item.title}_${item.preview}`}>{item.preview}</div>
 		  </div>
 		  ));
-	  return(foo);
+	  return(<div className="blogs">{foo}</div>);
   }
 }
